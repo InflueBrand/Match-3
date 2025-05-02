@@ -1,0 +1,225 @@
+/* Global Styles */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: 'Arial', sans-serif;
+    background-color: black;
+    color: white;
+    min-height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 20px;
+}
+
+.game-container {
+    max-width: 500px;
+    width: 100%;
+    margin: 0 auto;
+}
+
+/* Game Header */
+.game-header {
+    background-color: #111827;
+    border-radius: 12px;
+    padding: 16px;
+    margin-bottom: 16px;
+    border: 1px solid #d7b743;
+    box-shadow: 0 10px 15px -3px rgba(0, 0, 0, 0.7);
+}
+
+.stats-container {
+    display: flex;
+    justify-content: space-between;
+    margin-bottom: 8px;
+}
+
+.stat {
+    background-color: #1f2937;
+    border-radius: 8px;
+    padding: 4px 12px;
+    display: flex;
+    align-items: center;
+    border: 1px solid #b39738;
+}
+
+.stat-icon {
+    color: #ffd700;
+    font-weight: bold;
+    margin-right: 4px;
+}
+
+.stat-label {
+    color: #ffd700;
+    font-weight: bold;
+}
+
+.score-container {
+    text-align: center;
+    margin-bottom: 8px;
+}
+
+.score-display {
+    font-size: 24px;
+    font-weight: bold;
+    background: linear-gradient(90deg, #ffd700, #ffb700);
+    -webkit-background-clip: text;
+    background-clip: text;
+    color: transparent;
+}
+
+.progress-bar-container {
+    width: 100%;
+    background-color: #1f2937;
+    height: 10px;
+    border-radius: 999px;
+    margin-top: 8px;
+    border: 1px solid #b39738;
+    overflow: hidden;
+}
+
+.progress-bar {
+    height: 100%;
+    background: linear-gradient(90deg, #ffd700, #ffb700);
+    border-radius: 999px;
+    width: 0%;
+    transition: width 0.3s ease;
+}
+
+.target-score {
+    font-size: 12px;
+    color: #ffd700;
+    margin-top: 4px;
+}
+
+/* Game Board */
+.game-board {
+    background-color: #111827;
+    border-radius: 12px;
+    padding: 8px;
+    margin-bottom: 16px;
+    border: 1px solid #b39738;
+    display: grid;
+    grid-template-columns: repeat(8, 1fr);
+    grid-template-rows: repeat(8, 1fr);
+    gap: 4px;
+    aspect-ratio: 1/1;
+    box-shadow: 0 20px 25px -5px rgba(0, 0, 0, 0.7);
+}
+
+.cell {
+    border-radius: 8px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    cursor: pointer;
+    transition: all 0.2s ease;
+    position: relative;
+    border: 2px solid transparent;
+    box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.4);
+}
+
+.cell.selected {
+    border-color: #ffd700;
+    transform: scale(1.05);
+    z-index: 10;
+}
+
+.cell.matched {
+    background-color: rgba(255, 255, 255, 0.2) !important;
+}
+
+.cell.animating {
+    animation: bounce 0.3s ease;
+}
+
+@keyframes bounce {
+    0%, 100% { transform: translateY(0); }
+    50% { transform: translateY(-10px); }
+}
+
+/* Game Messages */
+.message-box {
+    background: linear-gradient(90deg, #ffd700, #ffb700);
+    border-radius: 8px;
+    padding: 16px;
+    text-align: center;
+    margin-bottom: 16px;
+    color: black;
+    font-weight: bold;
+    border: 1px solid #b39738;
+    box-shadow: 0 10px 15px -3px rgba(0, 0, 0, 0.7);
+}
+
+.message-box h2 {
+    font-size: 24px;
+    margin-bottom: 8px;
+}
+
+.message-box button {
+    margin-top: 16px;
+    background-color: black;
+    color: #ffd700;
+    border: 1px solid #b39738;
+    padding: 8px 16px;
+    border-radius: 8px;
+    font-weight: bold;
+    cursor: pointer;
+    transition: background-color 0.2s ease;
+}
+
+.message-box button:hover {
+    background-color: #111827;
+}
+
+.restart-container {
+    display: flex;
+    justify-content: center;
+    margin-bottom: 16px;
+}
+
+.restart-container button {
+    background-color: #111827;
+    color: #ffd700;
+    border: 1px solid #b39738;
+    padding: 8px 16px;
+    border-radius: 8px;
+    font-weight: bold;
+    cursor: pointer;
+    transition: background-color 0.2s ease;
+}
+
+.restart-container button:hover {
+    background-color: #1f2937;
+}
+
+.hidden {
+    display: none;
+}
+
+/* Footer */
+.brand-footer {
+    text-align: center;
+    margin-top: 24px;
+}
+
+.brand-name {
+    color: #ffd700;
+    font-weight: bold;
+}
+
+.brand-tag {
+    font-size: 12px;
+    color: #6b7280;
+}
+
+/* Game Icons */
+.icon {
+    width: 75%;
+    height: 75%;
+    filter: drop-shadow(0px 2px 2px rgba(0, 0, 0, 0.5));
+}
